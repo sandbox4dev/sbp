@@ -1,0 +1,15 @@
+.content-item {
+    padding: 20px 15px;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+.data-container {
+    margin: 20px 0;
+    border-radius: 3px;
+}
+
+.data-container:not(:empty) {
+    padding: 5px;
+    background-color: rgba(57, 78, 157, 0.22);
+}

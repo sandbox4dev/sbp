@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Ststs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <link href="../static/css/list.css" th:href="@{/css/list.css}" rel="stylesheet"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script type="text/javascript" src="/js/metr.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Journal</h2>
+
+    <div th:if="${not #lists.isEmpty(journals)}">
+    <h2>Journal</h2>
+        <table class="table table-striped">
+    <tr>
+        <th>datecreated</th>
+        <th>usercount</th>
+        <th>nationscount</th>
+        <th>sex_count</th>
+        <th>averageAge</th>
+    </tr>
+
+    <tr th:each="journal : ${journals}">
+        <td th:text="${journal.dateCreated}"></td>
+        <td th:text="${journal.userCount}"></td>
+        <td th:text="${journal.nationsCount}"></td>
+        <td th:text="${journal.sexCount}"></td>
+        <td th:text="${journal.averageAge}"></td>
+    </tr>
+    </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
